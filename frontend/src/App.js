@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import LoadingScreen from "./components/LoadingScreen"; // ✅ import your loading component
 import "./styles/LoadingScreen.css"; // ✅ import loading screen styles
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/main" element={<MainPage />} />
+          
         </Routes>
       </Router>
     </LoadingScreen>

@@ -20,9 +20,10 @@ const Login = () => {
     e.preventDefault();
     console.log("Login form submitted:", formData);
 
-    // TODO: Replace this with actual login API call
-    alert("Login Successful! Redirecting to Home...");
-    navigate("/");
+    // TODO: Replace this with actual login API call and authentication logic
+
+    alert("Login Successful! Redirecting to Main Page...");
+    navigate("/main");  // <-- Updated to navigate to MainPage
   };
 
   return (

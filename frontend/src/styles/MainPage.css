@@ -1,0 +1,61 @@
+/* Main Page Background */
+.main-page {
+  background-color: #2b0000; /* Dark back-red */
+  color: rgb(226, 216, 224);
+  min-height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #36072c;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f62564;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #30032a;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 2px solid #300427;
+  color: #340425;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: rgba(223, 220, 222, 0.1);
+  transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  text-align: center;
+}
