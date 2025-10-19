@@ -1,0 +1,154 @@
+/* 🎵 Splash Page Container */
+.splash-page {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎞️ Banner Carousel */
+.banner-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.banner-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.banner-image {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 5px;
+}
+
+/* ✨ Splash Content */
+.splash-content {
+  max-width: 700px;
+  z-index: 1;
+}
+
+/* 🎬 Slide-in animation */
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideInUp 1s ease-out forwards;
+}
+
+/* 🔤 Heading */
+.splash-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* 🪩 Subheading */
+.splash-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+}
+
+/* 🚀 Get Started Button */
+.get-started-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #ff0055, #ff6600);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  transform: scale(1.07);
+  background: linear-gradient(135deg, #ff6600, #ff0055);
+}
+
+/* 🎛️ Button Group (Login & Signup) */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ✨ Fade In Animation for Login/Signup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔐 Login Button */
+.login-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid #ff4081;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #ff4081;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 64, 129, 0.1);
+}
+
+/* 📝 Signup Button */
+.signup-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ff0055, #ff6600);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff6600, #ff0055);
+}
+
+
+
