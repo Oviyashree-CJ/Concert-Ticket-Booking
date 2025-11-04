@@ -24,9 +24,9 @@ Built with **React (frontend)**, **Spring Boot (backend)**, and **MySQL (databas
 - **Concert Listings** — View available concerts with details.  
 - **Seat Booking** — Interactive seat map with dynamic pricing (Platinum / Gold / Silver).  
 - **Payment Simulation** — Card / UPI / Wallet options.  
-- **Ticket Generation** — View or download your confirmed ticket.  
-- **User Tracking** — Store email and booking history.  
-- **Admin Panel** — View all bookings and concert details.
+- **Ticket Generation** — View and download your confirmed ticket.  
+- **User Tracking** — Store user details and booking history.  
+- **Admin Panel** — View all bookings and add concert details.
 
 ---
 
