@@ -1,7 +1,7 @@
 // src/components/Home.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import concertBg from "../assets/Background.jpg";
+import concertBg from "../assets/banner1.jpg";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -25,7 +25,7 @@ const Home = () => {
       }}
     >
       <div className="splash-content slide-in">
-        <h1>🎶 Welcome to Concert Night</h1>
+        <h1> Welcome to Concert Night</h1>
         <p>
           Discover electrifying events, book your tickets, and experience the rhythm of the night.
         </p>

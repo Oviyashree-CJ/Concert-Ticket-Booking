@@ -1,0 +1,74 @@
+.arena-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at center, #0a001a, #000);
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.booking-title {
+  font-size: 2.2rem;
+  text-shadow: 0 0 15px #ff00cc;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.arena-svg-container {
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+  box-shadow: 0 0 50px rgba(255, 0, 255, 0.2);
+  padding: 1rem;
+}
+
+rect:hover {
+  transform: scale(1.5);
+  transition: transform 0.2s ease;
+}
+
+.booking-summary {
+  margin-top: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.confirm-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.confirm-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.5);
+}
+
+.legend {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.legend-item {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  color: black;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+

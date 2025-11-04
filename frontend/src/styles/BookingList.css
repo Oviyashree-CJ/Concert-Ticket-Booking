@@ -1,0 +1,117 @@
+.booking-list-container {
+  padding: 2rem;
+  color: #fff;
+  background: linear-gradient(135deg, #0a001a, #1e0033, #330066);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.booking-header h2 {
+  color: #ff66b2;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.search-bar {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.search-bar:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #ff66b2;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+.booking-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.3);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.booking-card:hover {
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.5);
+}
+
+.booking-info h3 {
+  color: #ff80c0;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.status {
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+}
+
+.status.confirmed {
+  background-color: rgba(0, 255, 0, 0.2);
+  color: #00ff88;
+}
+
+.status.pending {
+  background-color: rgba(255, 255, 0, 0.2);
+  color: #ffff66;
+}
+
+.status.cancelled {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff6666;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #ff0055, #ff6600);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+
+.cancel-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff6600, #ff0055);
+}
+
+.no-bookings {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 2rem;
+}
+
+.loading {
+  color: #fff;
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}

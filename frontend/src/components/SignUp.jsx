@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Auth.css"; // we'll create this next
+import axios from "axios";
+import "../styles/Auth.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ const SignUp = () => {
   });
 
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,29 +21,26 @@ const SignUp = () => {
     });
   };
 
-  // Handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { name, email, password } = formData;
-
-    if (!name || !email || !password) {
-      setError("All fields are required!");
-      return;
-    }
-
-    // Basic email check
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setError("Please enter a valid email!");
-      return;
-    }
-
     setError("");
+    setSuccess("");
 
-    console.log("✅ Sign Up Data:", formData);
+    try {
+      const response = await axios.post("http://localhost:8080/api/auth/signup", formData);
+      const data = response.data;
 
-    // Redirect to login after sign up
-    navigate("/login");
+      // ✅ Backend now returns { success: true/false, message: "..." }
+      if (data.success) {
+        setSuccess("🎉 Registration successful! Redirecting to login...");
+        setTimeout(() => navigate("/login"), 1500);
+      } else {
+        setError(data.message || "Signup failed. Please try again.");
+      }
+    } catch (err) {
+      console.error("Signup error:", err);
+      setError("Server error. Please try again later.");
+    }
   };
 
   return (
@@ -52,6 +50,7 @@ const SignUp = () => {
         <p>Join Concert Night and experience live music like never before!</p>
 
         {error && <div className="error-msg">{error}</div>}
+        {success && <div className="success-msg">{success}</div>}
 
         <form onSubmit={handleSubmit} className="auth-form">
           <input
@@ -60,6 +59,7 @@ const SignUp = () => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -68,6 +68,7 @@ const SignUp = () => {
             placeholder="Email Address"
             value={formData.email}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -76,11 +77,10 @@ const SignUp = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
+            required
           />
 
-          <button type="submit" className="auth-btn">
-            Sign Up
-          </button>
+          <button type="submit" className="auth-btn">Sign Up</button>
         </form>
 
         <p className="auth-switch">

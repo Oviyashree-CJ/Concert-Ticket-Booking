@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Auth.css"; // You can use the same CSS for SignUp & Login
+import axios from "axios";
+import "../styles/Auth.css";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    role: "user", // Default role
   });
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,21 +22,52 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login form submitted:", formData);
+    setError("");
+    setLoading(true);
 
-    // TODO: Replace this with actual login API call and authentication logic
+    try {
+      // ✅ Send login request using formData
+      const response = await axios.post("http://localhost:8080/api/auth/login", {
+        email: formData.email,
+        password: formData.password,
+      });
 
-    alert("Login Successful! Redirecting to Main Page...");
-    navigate("/main");  // <-- Updated to navigate to MainPage
+      if (response.status === 200) {
+        const { message, role, email } = response.data;
+
+        if (message === "Login successful") {
+          // ✅ Save user email for future bookings
+          localStorage.setItem("userEmail", email);
+
+          // ✅ Navigate based on role
+          if (formData.role === "admin" && role === "admin") {
+            alert("🎉 Welcome, Admin!");
+            navigate("/admin");
+          } else if (formData.role === "user" && role === "user") {
+            alert("✅ Welcome back! Redirecting to Main Page...");
+            navigate("/main");
+          } else {
+            setError("Role mismatch — please select the correct login type.");
+          }
+        } else {
+          setError("Invalid email or password.");
+        }
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Invalid credentials. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="auth-container">
       <div className="auth-box fade-in">
-        <h2 className="auth-title">Welcome Back 🎶</h2>
-        <p className="auth-subtitle">Login to book your favorite concert tickets</p>
+        <h2 className="auth-title">🎵 Welcome to Concert Portal</h2>
+        <p className="auth-subtitle">Login to continue your musical journey</p>
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
@@ -57,8 +94,23 @@ const Login = () => {
             />
           </div>
 
-          <button type="submit" className="auth-btn">
-            Login
+          <div className="form-group">
+            <label>Login As</label>
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              className="role-select"
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          {error && <p className="error-message">{error}</p>}
+
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

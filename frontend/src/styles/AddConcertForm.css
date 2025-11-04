@@ -1,0 +1,105 @@
+.add-concert-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  font-family: "Poppins", sans-serif;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.concert-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 1px solid #4f8cff;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #00d4ff, #007bff);
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.4);
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.success {
+  color: #00ff9d;
+  background: rgba(0, 255, 157, 0.1);
+}
+
+.error {
+  color: #ff6060;
+  background: rgba(255, 96, 96, 0.1);
+}
