@@ -1,4 +1,4 @@
-# Concert Booking System
+# Concert Ticket Booking System
 
 A full-stack web application that allows users to browse concerts, select seats, make bookings, and complete payments online.  
 Built with **React (frontend)**, **Spring Boot (backend)**, and **MySQL (database)**.
